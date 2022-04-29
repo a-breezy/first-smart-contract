@@ -1,0 +1,18 @@
+// set storage to all addresses of users
+type storage = set<address>;
+
+type parameter = | ["Poke"];
+
+type return_ = [list<operation>, storage];
+
+// storage as parameter of store
+    // add address of user coding smart contract to store
+let poke = (store : storage) : return_ => {
+    return [ list([]) as list<operation>, Set.add(Tezos.source, store)];
+};
+
+let main = ([action, store]: [parameter, storage]): return_ => {
+	return match(action, {
+		Poke: () => poke(store),
+	})
+};
