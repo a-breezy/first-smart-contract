@@ -31,12 +31,10 @@ function App() {
           setWallet={setWallet}
         />
 
-        <div>
-        I am {userAddress} with {userBalance} Tz
-        </div>
-
+          <div>
+            I am {userAddress} with {userBalance} Tz
+          </div>
         </p>
-
       </header>
     </div>
   );
